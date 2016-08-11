@@ -1,16 +1,30 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ExcelAdapter
 {
     public partial class Form1 : Form
     {
+        private Table table;
+        private string defaultPath = Directory.GetCurrentDirectory() + @"/mock_data.json";
+
         public Form1()
         {
             InitializeComponent();
+            InitializeContent(null);
 
-            var manager = new Manager(null);
-            PrintSheet(manager.data);
+            PrintSheet(table);
+        }
+
+        /// <summary>
+        /// Initializing "table" instance
+        /// </summary>
+        /// <param name="path">Path to JSON-file</param>
+        private void InitializeContent(string path)
+        {
+            bool isValidPath = !string.IsNullOrEmpty(path) && File.Exists(path);
+            table = Table.Import(isValidPath ? path : defaultPath);
         }
 
         public void PrintSheet(Table table)

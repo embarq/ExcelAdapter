@@ -69,7 +69,7 @@
             this.listView.GridLines = true;
             this.listView.Location = new System.Drawing.Point(13, 13);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(715, 361);
+            this.listView.Size = new System.Drawing.Size(715, 350);
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -89,6 +89,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
